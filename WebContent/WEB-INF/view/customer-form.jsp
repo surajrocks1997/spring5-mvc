@@ -18,7 +18,6 @@
 		First Name: <form:input path="firstName" />
 		<br>
 		Last Name (*): <form:input path="lastName" />
-		<br>
 		<form:errors path="lastName" cssClass="error"></form:errors>
 		<br>
 		<input type="submit" value="submit" />
