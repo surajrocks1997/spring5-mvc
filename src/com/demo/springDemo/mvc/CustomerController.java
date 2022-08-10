@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customer")
 public class CustomerController {
 
-	// adding initbinder which will basically pre-process all incoming request and do
+	// adding initbinder which will basically pre-process all incoming request and
+	// do
 	// something with the data
 	// stringTrimmerEditor will basically trim from front and back and if no data,
 	// result to null
@@ -33,7 +34,10 @@ public class CustomerController {
 
 	@RequestMapping("/processForm")
 	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult bindingResult) {
+
 		System.out.println(theCustomer.getLastName());
+		System.out.println("Binding Result: " + bindingResult);
+
 		if (bindingResult.hasErrors()) {
 			return "customer-form";
 		} else {
