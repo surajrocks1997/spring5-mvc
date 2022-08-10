@@ -8,6 +8,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.beans.factory.annotation.Required;
 
+import com.demo.springDemo.mvc.validation.CourseCode;
+
 public class Customer {
 
 	private String firstName;
@@ -23,6 +25,17 @@ public class Customer {
 
 	@Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "Only 5 characters allowed")
 	private String postalCode;
+
+	@CourseCode(value = "DEMO", message = "should start with DEMO")
+	private String courseCode;
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
 
 	public String getPostalCode() {
 		return postalCode;
